@@ -1,0 +1,41 @@
+body {
+
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-family: sans-sherif;
+    background-color: black;
+    color: white;
+}
+
+.graph {
+    background-image: linear-gradient(to right, #DD1367, #920b43, #60082d, #300316, #2f121e);
+    margin-left: 0px;
+    margin-right: 100px;
+    );
+}
+
+a {
+
+    color: white;
+}
+
+.label {
+    text-align: right;
+    margin-right: 100px;
+}
+
+.my_dataviz {
+    background-image: linear-gradient(to right, olive, cyan);
+}
+
+img {
+    position: relative;
+    top: -16px;
+    right: -1050px;
+}
+
+/* h1 {
+    text-align: center;
+} */
