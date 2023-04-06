@@ -1,122 +1,51 @@
+// set the dimensions and margins of the graph
+const margin = { top: 10, right: 30, bottom: 30, left: 60 },
+	width = 600 - margin.left - margin.right,
+	height = 400 - margin.top - margin.bottom;
 
-< !--
-    Svelted version of Exercise 2 of Front End Masters course Introduction to Data Visualization with d3.js v4 by Shirley Wu
-https://frontendmasters.com/courses/d3-v4/
--->
-<script>
-	import { line, curveStep, scaleLinear, timeParse, extent, scaleTime } from 'd3';
-	import data from './data.js';
-	
-	let el;
-	
-	let city = "austin"
-	const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-		"Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-	];
-	
-	var width = 800;
-	var height = 300;
-	var margin = { top: 20, bottom: 20, left: 20, right: 20 };
-	
-	data.forEach((d) => {
-		d.date = timeParse("%Y%m%d")(d.date);
-		d.date = new Date(d.date); // x
-    d.temp = ++d[city]; // y
-	});
-	
-	// scales
-	let extentX = extent(data, (d) => d.date);
-	let xScale = scaleTime()
-		.domain(extentX)
-		.range([margin.left, width - margin.right]);
+// append the svg object to the body of the page
+const svg = d3.select("#my_dataviz")
+	.append("svg")
+	.attr("width", width + margin.left + margin.right)
+	.attr("height", height + margin.top + margin.bottom)
+	.append("g")
+	.attr("transform", `translate(${margin.left},${margin.top})`);
 
-	let extentY = extent(data, (d) => d[city]);
-	let yScale = scaleLinear()
-		.domain(extentY)
-		.range([height - margin.bottom, margin.top]);
-	
-	let path = line()
-		.x((d) => xScale(d.date))
-    .y((d) => yScale(d[city]))
-	  .curve(curveStep);
-	
-	// ticks for x axis - first day of each month found in the data
-	let xTicks = [];
-	data.forEach(d => {
-		if(d.date.getDate() == 1) {
-			xTicks.push(d.date);
-		}
+//Read the data
+d3.csv("https://raw.githubusercontent.com/asadahmadk/MSDVthesis/main/mood_trend.csv",
+
+	// When reading the csv, I must format variables:
+	function (d) {
+		return { date: d3.timeParse("%b-%Y")(d.date), value: d.value }
 	})
-	
-	// x axis labels string formatting
-	let xLabel = (x) => 
-		monthNames[x.getMonth()] + ' 20' + x.getYear().toString().substring(x.getYear(), 1)
-	
-	// y ticks count to label by 5's
-	let yTicks = [];
-	for (var i = Math.round(extentY[0]); i < Math.round(extentY[1] + 1); i=i+5) {
-		yTicks.push(Math.floor(i/5)*5);
-	}
-	
-	// d's for axis paths
-	let xPath = `M${margin.left + .5},6V0H${width - margin.right + 1}V6`
-	let yPath = `M-6,${height + .5}H0.5V0.5H-6`
+	.then(
 
-</script>
+		// Now I can use this dataset:
+		function (data) {
 
-<style>
-	svg {
-		width: 100%;
-		height: 100%;
-	}
-	.tick {
-		font-size: 11px;
-	}
-</style>
+			// Add X axis --> it is a date format
+			const x = d3.scaleTime()
+				.domain(d3.extent(data, function (d) { return d.date; }))
+				.range([0, width]);
+			svg.append("g")
+				.attr("transform", `translate(0, ${height})`)
+				.call(d3.axisBottom(x));
 
-<svg bind:this={el} transform="translate({margin.left}, {margin.top})">
-	<g>
-		<!-- line -->
-			<path 
-				d="{path(data)}"
-				fill="none"
-				stroke="blue"
-			/>
-	</g>
-	
-	<!-- y axis -->
-	<g transform="translate({margin.left}, 0)">
-		<path stroke="currentColor" d="{yPath}" fill="none" />
+			// Add Y axis
+			const y = d3.scaleLinear()
+				.domain([0.45, 0.55])
+				.range([height, 0]);
+			svg.append("g")
+				.call(d3.axisLeft(y));
 
-		{#each yTicks as y} 
-			<g class="tick" opacity="1" transform="translate(0,{yScale(y)})">
-				<line stroke="currentColor" x2="-5" />
-				<text dy="0.32em" fill="currentColor" x="-{margin.left}">
-					{y}
-				</text>
-			</g>
- 		{/each}
-	</g>
-	
-	<!-- x axis -->
-	<g transform="translate(0, {height})">
-		<path stroke="currentColor" d="{xPath}" fill="none" />
-		
-		{#each xTicks as x} 
-			<g class="tick" opacity="1" transform="translate({xScale(x)},0)">
-				<line stroke="currentColor" y2="6" />
-				<text fill="currentColor" y="9" dy="0.71em" x="-{margin.left}">
-					{xLabel(x)}
-				</text>
-			</g>
-		{/each}
-</svg>
-
-
-
-
-
-
-
-
-
+			// Add the line
+			svg.append("path")
+				.datum(data)
+				.attr("fill", "none")
+				.attr("stroke", "steelblue")
+				.attr("stroke-width", 1.5)
+				.attr("d", d3.line()
+					.x(function (d) { return x(d.date) })
+					.y(function (d) { return y(d.value) })
+				)
+		})
