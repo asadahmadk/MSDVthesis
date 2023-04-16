@@ -1,12 +1,31 @@
 body {
 
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     font-family: sans-sherif;
+    color: white;
+    background-color: black;
 
+
+}
+
+.background {
     color: black;
+
+}
+
+.wrapper {
+    display: flex;
+}
+
+.introleft {
+    width: 30%;
+}
+
+.introright {
+    width: 70%;
 }
 
 .graph {
@@ -22,21 +41,8 @@ a {
     color: black;
 } */
 
-.label {
-    text-align: right;
-    margin-right: 100px;
-}
+
 
 .my_dataviz {
     background-image: linear-gradient(to right, olive, cyan);
 }
-
-img {
-    position: relative;
-    top: -16px;
-    right: -1050px;
-}
-
-/* h1 {
-    text-align: center;
-} */
