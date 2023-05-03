@@ -14,7 +14,6 @@ const svg1 = d3.select("#my_dataviz")
 
 //Read the data
 d3.csv("https://raw.githubusercontent.com/asadahmadk/MSDVthesis/main/moodData.csv",
-	console.log(data)
 
 	// When reading the csv, I must format variables:
 	function (d) {
