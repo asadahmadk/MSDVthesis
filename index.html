@@ -5,11 +5,13 @@
 <script src="https://d3js.org/d3.v6.js"></script>
 <script src="https://d3js.org/d3.v6.min.js"></script>
 <script src="https://d3js.org/d3.v7.min.js"></script>
-<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script> -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
 
 <body>
     <link rel="stylesheet" href="style.css" />
+
     <div class="before-chart">
         <div class="container">
             <div class="introduction">
@@ -76,54 +78,56 @@
             <div class="flex-container">
                 <div class="flex-item">
                     <h2> Valence</h2>
-                    <p>Musical positiveness conveyed by a track; high valence sound more happy while tracks with low
+                    <p1>Musical positiveness conveyed by a track; high valence sound more happy while tracks with low
                         valence
-                        sound more sad.</p>
+                        sound more sad.</p1>
                 </div>
                 <div class="flex-item">
                     <h2> Energy</h2>
-                    <p>Perceptual measure of intensity and activity of how energetic tracks feel fast, loud, and noisy.
-                    </p>
+                    <p1>Perceptual measure of intensity and activity of how energetic tracks feel fast, loud, and noisy.
+                    </p1>
                 </div>
                 <div class="flex-item">
                     <h2> Danceability</h2>
-                    <p>How suitable a track is for dancing based on a combination of musical elements.</p>
+                    <p1>How suitable a track is for dancing based on a combination of musical elements.</p1>
                 </div>
                 <div class="flex-item">
                     <h2>Tempo</h2>
-                    <p>Track beats per minute (BPM) which is the speed of a given piece and derives directly from the
+                    <p1>Track beats per minute (BPM) which is the speed of a given piece and derives directly from the
                         average
-                        beat duration.</p>
+                        beat duration.</p1>
                 </div>
             </div>
         </div>
     </div>
     <div class="chart">
         <div class=container>
+            <div class="tooltip"></div>
             <div class="svg-container">
                 <div id="my_dataviz">
                     <script src=main.js></script>
-                    <div class="tooltip"></div>
                 </div>
             </div>
-            <!-- <p> Mar 2020 - COVID’19 was declared as pandemic and lock down began.
-                Music preferences shifted to listen more happier songs and kept the mood of the users lifted.</p>
-            <p>Jul 2020 -Slowly people started adopting the new normal and were relieved as first vaccine was
-                introduced </p>
-            <p>May 2021 -Delta Variant Cases were reported. Forced people to stay at home listening to music kept
-                them motivated and hopeful </p>
-            <p> Dec 2021 -Positivity was its peak, people were vaccinated. Omicron variant cases were reported,
-                causing uncertainty as vaccines did not protect against them.</p>
-            <p>Valence and Energy are inversely proportional indicating not every happy song is fast, loud and
-                noisy. On contrary happy songs have a low energy, soothing the listeners. </p>
-            <p>
+            <div id="box">
+                <p> Mar 2020 - COVID’19 was declared as pandemic and lock down began.
+                    Music preferences shifted to listen more happier songs and kept the mood of the users lifted.</p>
+                <p>Jul 2020 -Slowly people started adopting the new normal and were relieved as first vaccine was
+                    introduced </p>
+                <p>May 2021 -Delta Variant Cases were reported. Forced people to stay at home listening to music kept
+                    them motivated and hopeful </p>
+                <p> Dec 2021 -Positivity was its peak, people were vaccinated. Omicron variant cases were reported,
+                    causing uncertainty as vaccines did not protect against them.</p>
+                <p>Valence and Energy are inversely proportional indicating not every happy song is fast, loud and
+                    noisy. On contrary happy songs have a low energy, soothing the listeners. </p>
+                <p>
 
-                Danceability was low as clubs and public spaces were closed. Indoors people preferred, high valence,
-                low energy and danceability songs to keep their moods alleviated.
-            </p>
+                    Danceability was low as clubs and public spaces were closed. Indoors people preferred, high valence,
+                    low energy and danceability songs to keep their moods alleviated.
+                </p>
 
-            <p>Tempo , danceability and valence are interconnnected indicating users were keeping themselves
-                motivated through soothing and positive music</p> -->
+                <p>Tempo , danceability and valence are interconnnected indicating users were keeping themselves
+                    motivated through soothing and positive music</p>
+            </div>
         </div>
     </div>
     </div>
@@ -174,7 +178,4 @@
             </p>
         </div>
     </div>
-
-
-
 </body>
