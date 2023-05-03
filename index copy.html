@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v6.js"></script>
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script> -->
+
+<body>
+    <link rel="stylesheet" href="style.css" />
+
+    <div class="introduction">
+        <img src="Spotify_icon.png" width="100px" height="100px">
+        <h1>COVID-19 and Mood of Spotify Users:</h1>
+        <h1>An Intricate Interplay</h1>
+        <p>
+            by Asad Ahmad Khan
+        </p>
+        <div class="wave">
+            <svg viewBox="0 0 500 210">
+                <defs>
+                    <linearGradient id="gradient_svg" x1="100%" y1="70%" x2="0%" y2="0%">
+                        <stop offset="0%" stop-color="#bc4a07" />
+                        <stop offset="50%" stop-color="#f8f000" />
+                        <stop offset="100%" stop-color="#33aa1b" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <script>
+                var pointCount = 10
+                var lineCount = 30
+                var random = d3.randomNormal(30, 25);
+                var svg = d3.select('svg');
+                var NumberLines = d3.range(0, lineCount)
+                var w = 500,
+                    h = 100;
+
+                var x = d3.scaleLinear()
+                    .domain([0, pointCount - 1])
+                    .range([0, w]);
+
+                var y = d3.scaleLinear()
+                    .domain([0, 50])
+                    .range([0, h]);
+
+                var prevData = d3.range(pointCount).map(random); // Путь для первой линии
+                var data = d3.range(lineCount).map((i) => {
+
+                    if (i == 0) {
+                        return prevData;
+                    } else {
+                        var next_data = prevData.map((v, k, e) => {
+                            // var now = e[k];
+                            // var next = e[k + 1];
+                            //     console.log(now) 
+
+                            return v + Math.random() * 2;
+                        });
+
+                        prevData = next_data;
+                        return next_data;
+                    }
+                });
+
+                var vector = d3.range(lineCount).map((i) => {
+                    return d3.range(pointCount).map((j) => {
+                        return data[i][j] < 10 ? 1 : -1;
+                    });
+                });
+
+                var line = d3.line()
+                    .x(function (d, i) {
+                        return x(i);
+                    })
+                    .y(function (d, i) {
+                        return y(d);
+                    });
+
+                var numerPath = svg.append('g')
+                    .selectAll("path")
+                    .data(NumberLines)
+                    .enter()
+                    .append('path')
+
+                var path = svg.selectAll('path')
+                    .datum(data[0])
+                    .attr("d", line.curve(d3.curveBasis));
+
+
+                function update() {
+                    var transition = d3.transition()
+                        .duration(500)
+                        .ease(d3.easeSin);
+                    var z = 1
+
+                    path.each(function (d, i) {
+
+                        data[i] = data[i].map((v, k) => {
+                            if (vector[i][k] > 0 && v > 50) {
+                                vector[i][k] = -1
+                            }
+                            if (vector[i][k] < 0 && v < 10) {
+                                vector[i][k] = 1
+                            }
+                            return v + z * vector[i][k];
+                        });
+
+                        d3.select(this)
+                            .datum(data[i])
+                            .transition(transition)
+                            .attr("d", line.curve(d3.curveBasis));
+                    });
+                }
+                d3.interval(() => {
+                    update();
+                }, 100);
+            </script>
+        </div>
+    </div>
+    <div class="introductiontext ">
+        <p>
+            The widespread outbreak of the coronavirus had a profound impact, overwhelming healthcare
+            infrastructures,
+            causing a sharp decline in stock markets, and necessitating strict limitations on individual mobility
+            for
+            countless individuals affecting their mood. In the last few years we have witnessed a significant
+            transformation
+            in the world but what made our lives better was
+            music.
+        </p>
+
+        <img src=" tsimage.svg" width="800" height="300">
+
+        <p>
+            Music is used across cultures and ages as a powerful mood regulator. The mood of music is one of main
+            motivations why people devote so much time, energy, and money to it.
+        </p>
+    </div>
+
+    <div class="composition">
+        <h1> What is the Composition of Mood?</h1>
+        <p>
+            Spotify defines the four components of mood on a scale of 0 to 1 in terms of: valence, energy,
+            danceability
+            and tempo. For this article, data of top 100 songs each month is used for these variables using Spotify API
+            of from January 2019 to December 2022.
+        </p>
+    </div>
+
+
+    <div class="components">
+        <div id="circles">
+            <script>
+                var svg = d3.select("#circles")
+                    .append("svg")
+                    .attr("width", 1000)
+                    .attr("height", 200);
+                var circleProps = [
+                    { cx: 120, cy: 100, r: 50, color: "#6e40aa" },
+                    { cx: 350, cy: 100, r: 50, color: "#1ac7c2" },
+                    { cx: 575, cy: 100, r: 50, color: "#aff05b" },
+                    { cx: 800, cy: 100, r: 50, color: "#ff5e63" }
+                ];
+                var circles = svg.selectAll("circle")
+                    .data(circleProps)
+                    .enter()
+                    .append("circle");
+                circles.attr("cx", function (d) { return d.cx; })
+                    .attr("cy", function (d) { return d.cy; })
+                    .attr("r", function (d) { return d.r; })
+                    .attr("fill", function (d) { return d.color; });
+                var circles = svg.selectAll("circle")
+                    .data(circleProps)
+                    .enter()
+                    .append("circle");
+            </script>
+        </div>
+    </div>
+
+    <div class="flex-container">
+        <div class="flex-item">
+            <h2> Valence</h2>
+            <p>Musical positiveness conveyed by a track; high valence sound more happy while tracks with low valence
+                sound more sad.</p>
+        </div>
+        <div class="flex-item">
+            <h2> Energy</h2>
+            <p>Perceptual measure of intensity and activity of how energetic tracks feel fast, loud, and noisy.
+            </p>
+        </div>
+        <div class="flex-item">
+            <h2> Danceability</h2>
+            <p>How suitable a track is for dancing based on a combination of musical elements.</p>
+        </div>
+        <div class="flex-item">
+            <h2>Tempo</h2>
+            <p>Track beats per minute (BPM) which is the speed of a given piece and derives directly from the average
+                beat duration.</p>
+        </div>
+    </div>
+
+
+    <!-- Create a div where the graph will take place -->
+    <div class=" graphs">
+        <div id="valence">
+            <div class="flourish-embed flourish-chart" data-src="visualisation/13546251">
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
+
+                <style>
+                    .div {
+                        position: absolute;
+                        width: 100px;
+                        height: 100px;
+                        left: 0px;
+                        background: red;
+                        transition: all 2s;
+                    }
+
+                    .valence {
+                        left: 100px;
+                        width: 300px;
+                    }
+                </style>
+                </head>
+
+                <body>
+
+                    <!-- <h1>The transition Property</h1>
+
+                    <p>Hover over the div element below, to see the transition effect:</p> -->
+                    <div id="box"></div>
+
+                    <script>
+                        let box = document.getElementById("box");
+
+                        box.addEventListener("mouseover", function (event) {
+                            box.classList.add("left-one")
+                        }, f
+                  box.addEventListener("mouseover", function (event) {
+                            box.classList.add("left-one")
+                        }, false);
+
+                        box.addEventListener("mouseleaves", function (event) {
+                            box.classList.remove("left-one")
+                        }, false);
+
+                    </script>
+            </div>
+        </div>
+
+        <div id="valencenenergy">
+            <div class="flourish-embed flourish-chart" data-src="visualisation/13546239">
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
+            </div>
+        </div>
+
+        <div id="valenceenergydance">
+            <div class="flourish-embed flourish-chart" data-src="visualisation/13542945">
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
+            </div>
+        </div>
+        <div id="valenceenergydancetempo">
+            <div class="flourish-embed flourish-chart" data-src="visualisation/13555183">
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
+            </div>
+        </div>
+    </div>
+    <!-- 
+    <div class=valence>
+        <div id="my_dataviz">
+            <svg width="200" height="200" id="svg">
+                <g transform="translate(50, 200)"></g>
+            </svg>
+            <script src=main.js></script>
+        </div>
+    </div>
+
+    <div class=valenceenergy>
+        <div id="my_dataviz2">
+
+            <script src=graph3.js></script>
+
+        </div>
+    </div> -->
+    <div id="lastpage">
+        <h1>Which artists alleviated our mood and kept us goes through difficult times?
+        </h1>
+        <h3> You may be wondering which artist had the most listened songs and contributed to a happy mood through out
+            COVID’19? </h3>
+        <p>Using the popularity measure of Spotify, artists are listed in terms of their popularity ranks assigned.</p>
+        <img src="" </div>
+
+        <div id="observablehq-chart-c23db5a9">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+            <script type="module">
+                import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+                import define from "https://api.observablehq.com/d/d3ff39004b12a7ac@615.js?v=3";
+                new Runtime().module(define, name => {
+                    if (name === "chart") return new Inspector(document.querySelector("#observablehq-chart-c23db5a9"));
+                });
+            </script>
+        </div>
+
+
+        <div id="conclusion">
+            <p>
+                Now, you can evaluate how important music is keep our mood alleviated and motivated. This can take
+                many shapes,
+                of which streaming is just one. If you are a music enthusiast, keep supporting artists, be it by
+                subscribing
+                to
+                their social media channels and sharing with friends, getting a music streaming subscription, attending
+                their shows, or buying merch!
+            </p>
+
+            <p><b>NOTE</b></p>
+            <p>
+                This article is a short and simple introduction of the basic principles of mood as defined by Spotify.
+                The data is used from Spotify open API.
+            </p>
+        </div>
+    </div>
+</body>

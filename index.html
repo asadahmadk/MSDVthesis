@@ -3,37 +3,178 @@
 
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v6.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
-<link rel="stylesheet" href="style.css" />
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script> -->
 
-<div class="wrapper">
-    <div class="introleft">
-        <h1>How music listeners mood has evolved over last five years?</h1>
-        <p>
-            Last five years have been life changing affecting our physical and mental health. .......
-        </p>
+<body>
+    <link rel="stylesheet" href="style.css" />
+    <div class="before-chart">
+        <div class="container">
+            <div class="introduction">
+                <img src="Spotify_icon.png" width="100px" height="100px">
+                <h1>COVID-19 and Mood of Spotify Users</h1>
+                <h1>An Intricate Interplay</h1>
+                <p>
+                    by Asad Ahmad Khan
+                </p>
+            </div>
+            <div class="wave">
+                <svg viewBox="0 0 500 180">
+                    <defs>
+                        <linearGradient id="gradient_svg" x1="100%" y1="70%" x2="0%" y2="0%">
+                            <stop offset="0%" stop-color="#bc4a07" />
+                            <stop offset="50%" stop-color="#f8f000" />
+                            <stop offset="100%" stop-color="#33aa1b" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <script src="wave.js">
+                </script>
+            </div>
+        </div>
+
+        <div class="container ">
+            <p>
+                The widespread outbreak of the coronavirus had a profound impact, overwhelming healthcare
+                infrastructures,
+                causing a sharp decline in stock markets, and necessitating strict limitations on individual
+                mobility
+                for
+                countless individuals affecting their mood. In the last few years we have witnessed a significant
+                transformation
+                in the world but what made our lives better was
+                music.
+            </p>
+
+            <img src=" tsimage.svg" width="900" height="500">
+
+            <p>
+                Music is used across cultures and ages as a powerful mood regulator. The mood of music is one of
+                main
+                motivations why people devote so much time, energy, and money to it.
+            </p>
+        </div>
+
+        <div class="container">
+            <h1> What is the Composition of Mood?</h1>
+            <p>
+                Spotify defines the four components of mood on a scale of 0 to 1 in terms of: valence, energy,
+                danceability
+                and tempo. For this article, data of top 100 songs each month is used for these variables using
+                Spotify
+                API
+                of from January 2019 to December 2022.
+            </p>
+
+            <div id="circles">
+                <script src="circles.js"></script>
+            </div>
+
+
+            <div class="flex-container">
+                <div class="flex-item">
+                    <h2> Valence</h2>
+                    <p>Musical positiveness conveyed by a track; high valence sound more happy while tracks with low
+                        valence
+                        sound more sad.</p>
+                </div>
+                <div class="flex-item">
+                    <h2> Energy</h2>
+                    <p>Perceptual measure of intensity and activity of how energetic tracks feel fast, loud, and noisy.
+                    </p>
+                </div>
+                <div class="flex-item">
+                    <h2> Danceability</h2>
+                    <p>How suitable a track is for dancing based on a combination of musical elements.</p>
+                </div>
+                <div class="flex-item">
+                    <h2>Tempo</h2>
+                    <p>Track beats per minute (BPM) which is the speed of a given piece and derives directly from the
+                        average
+                        beat duration.</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="introright">
-        <img src="introductionimg.jpg" width="600" height="400">
+    <div class="chart">
+        <div class=container>
+            <div class="svg-container">
+                <div id="my_dataviz">
+                    <script src=main.js></script>
+                    <div class="tooltip"></div>
+                </div>
+            </div>
+            <!-- <p> Mar 2020 - COVID’19 was declared as pandemic and lock down began.
+                Music preferences shifted to listen more happier songs and kept the mood of the users lifted.</p>
+            <p>Jul 2020 -Slowly people started adopting the new normal and were relieved as first vaccine was
+                introduced </p>
+            <p>May 2021 -Delta Variant Cases were reported. Forced people to stay at home listening to music kept
+                them motivated and hopeful </p>
+            <p> Dec 2021 -Positivity was its peak, people were vaccinated. Omicron variant cases were reported,
+                causing uncertainty as vaccines did not protect against them.</p>
+            <p>Valence and Energy are inversely proportional indicating not every happy song is fast, loud and
+                noisy. On contrary happy songs have a low energy, soothing the listeners. </p>
+            <p>
+
+                Danceability was low as clubs and public spaces were closed. Indoors people preferred, high valence,
+                low energy and danceability songs to keep their moods alleviated.
+            </p>
+
+            <p>Tempo , danceability and valence are interconnnected indicating users were keeping themselves
+                motivated through soothing and positive music</p> -->
+        </div>
     </div>
-</div>
+    </div>
+    <div class="after-chart">
+        <div id="container">
+            <h1>Which artists alleviated our mood and kept us goes through difficult times?
+            </h1>
+            <h3> You may be wondering which artist had the most listened songs and contributed to a happy mood
+                through
+                out
+                COVID’19? </h3>
+            <p>Using the popularity measure of Spotify, artists are listed in terms of their popularity ranks
+                assigned.
+            </p>
+            <img src="" </div>
+
+            <div id="observablehq-chart-c23db5a9">
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+                <script type="module">
+                    import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+                    import define from "https://api.observablehq.com/d/d3ff39004b12a7ac@615.js?v=3";
+                    new Runtime().module(define, name => {
+                        if (name === "chart") return new Inspector(document.querySelector("#observablehq-chart-c23db5a9"));
+                    });
+                </script>
+            </div>
+        </div>
 
 
-<div id="my_dataviz1"></div>
-<div id="content">
-    <svg width="700" height="400">
-        <g transform="translate(50, 200)"></g>
-    </svg>
-    <script src="graph2.js"></script>
+        <div id="container">
+            <p>
+                Now, you can evaluate how important music is keep our mood alleviated and motivated. This can
+                take
+                many shapes,
+                of which streaming is just one. If you are a music enthusiast, keep supporting artists, be it by
+                subscribing
+                to
+                their social media channels and sharing with friends, getting a music streaming subscription,
+                attending
+                their shows, or buying merch!
+            </p>
 
-</div>
+            <p><b>NOTE</b></p>
+            <p>
+                This article is a short and simple introduction of the basic principles of mood as defined by
+                Spotify.
+                The data is used from Spotify open API.
+            </p>
+        </div>
+    </div>
 
-<!-- Create a div where the graph will take place -->
-<div id="my_dataviz">
-    <script src=main.js></script>
-</div>
 
-<div id="my_dataviz">
-    <script src=graph3.js></script>
-</div>
+
+</body>
