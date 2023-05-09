@@ -142,8 +142,6 @@ d3.csv("https://raw.githubusercontent.com/asadahmadk/MSDVthesis/main/moodData.cs
 				.attr("height", 560)
 				.attr("fill", "grey");
 
-
-
 			const line = d3.line()
 				.x(d => xScale(d.x))
 				.y(d => yScale(d.y))
@@ -176,9 +174,11 @@ d3.csv("https://raw.githubusercontent.com/asadahmadk/MSDVthesis/main/moodData.cs
 				.on("mousemove", function (event, d) {
 					// Get the x-position of the mouse pointer
 					const mouseX = x.invert(d3.pointer(event)[0]);
+					const mouseY = y.invert(d3.pointer(event)[0]);
+
 
 					// Find the index of the data point closest to the mouse pointer
-					const bisectIndex = d3.bisectLeft(data, mouseX, 1);
+					const bisectIndex = d3.bisectLeft(data, mouseX, mouseY, 1);
 					const dataLeft = data[bisectIndex - 1];
 					const dataRight = data[bisectIndex];
 					const closestDataPoint = mouseX - dataLeft.date > dataRight.date - mouseX ? dataRight : dataLeft;
@@ -190,6 +190,7 @@ d3.csv("https://raw.githubusercontent.com/asadahmadk/MSDVthesis/main/moodData.cs
 					tooltip.html("Valence: " + closestDataPoint.valence)
 						.style("left", (event.pageX + 10) + "px")
 						.style("top", (event.pageY - 28) + "px");
+
 				})
 				// .on("mouseout", function (d) {
 				// 	// Hide the tooltip when the user moves the mouse away from the path
@@ -341,6 +342,10 @@ d3.csv("https://raw.githubusercontent.com/asadahmadk/MSDVthesis/main/moodData.cs
 			return svg1.node();
 
 		})
+
+
+
+
 
 
 

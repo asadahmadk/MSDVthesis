@@ -52,11 +52,12 @@ ody {
     /* Old browsers */
     background: -moz-linear-gradient(top, #b4ddb4 0%, #83c783 17%, #52b152 33%, #008a00 67%, #005700 83%, #002400 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #b4ddb4 0%, #83c783 17%, #52b152 33%, #008a00 67%, #005700 83%, #002400 100%);
+    /* background: -webkit-linear-gradient(top, #b4ddb4 0%, #83c783 17%, #52b152 33%, #008a00 67%, #005700 83%, #002400 100%);
     /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom, #b4ddb4 0%, #83c783 17%, #52b152 33%, #008a00 67%, #005700 83%, #002400 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b4ddb4', endColorstr='#002400', GradientType=0);
+    /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b4ddb4', endColorstr='#002400', GradientType=0);*/
+
     /* IE6-9 */
 
 }
@@ -67,13 +68,20 @@ g {
     stroke: url(#gradient_svg)
 }
 
+g {
+    fill: none;
+    stroke-width: 0.5px;
+    stroke: url(#gradient_svg1)
+}
+
+
 .circle {
     fill: green;
 }
 
 .label {
     fill: white;
-    font-family: sans-serif;
+    font-family: Helvetica;
     font-size: 12px;
     text-anchor: middle;
 }
@@ -135,13 +143,21 @@ div.body {
     top: 100px;
 }
 
-.chart {
+.chartcontainer {
     position: relative;
 }
 
-p {
-    margin: auto;
+.chart {
+    position: sticky;
+    top: 100px;
+}
 
+.box {
+    border: 1px solid white;
+    padding: 10px;
+    width: 400px;
+    text-align: center;
+    background-color: grey;
 }
 
 svg {
@@ -152,4 +168,26 @@ svg {
     width: 100%;
     height: 100%;
 
+}
+
+.container {
+    width: 100%;
+    padding: 20px;
+}
+
+.section-left {
+    width: 45%;
+    float: left;
+    align-self: auto;
+}
+
+.section-right {
+    width: 55%;
+    float: right;
+}
+
+.endimg {
+    width: 400px;
+    height: 500px;
+    align-items: flex-end;
 }
