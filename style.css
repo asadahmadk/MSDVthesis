@@ -11,9 +11,7 @@ body {
 }
 
 .container {
-
     height: 100vh;
-
 }
 
 .img {
@@ -49,17 +47,7 @@ ody {
     padding: 0;
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#b4ddb4+0,83c783+17,52b152+33,008a00+67,005700+83,002400+100;Green+3D+%231 */
     background: #b4ddb4;
-    /* Old browsers */
-    background: -moz-linear-gradient(top, #b4ddb4 0%, #83c783 17%, #52b152 33%, #008a00 67%, #005700 83%, #002400 100%);
-    /* FF3.6-15 */
-    /* background: -webkit-linear-gradient(top, #b4ddb4 0%, #83c783 17%, #52b152 33%, #008a00 67%, #005700 83%, #002400 100%);
-    /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom, #b4ddb4 0%, #83c783 17%, #52b152 33%, #008a00 67%, #005700 83%, #002400 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b4ddb4', endColorstr='#002400', GradientType=0);*/
-
-    /* IE6-9 */
-
 }
 
 g {
@@ -67,13 +55,6 @@ g {
     stroke-width: 0.5px;
     stroke: url(#gradient_svg)
 }
-
-g {
-    fill: none;
-    stroke-width: 0.5px;
-    stroke: url(#gradient_svg1)
-}
-
 
 .circle {
     fill: green;
@@ -109,7 +90,7 @@ g {
 }
 
 
-div.tooltip {
+/* div.tooltip {
     position: absolute;
     text-align: center;
     line-height: 28px !important;
@@ -118,11 +99,21 @@ div.tooltip {
     padding: 2px;
     font: 12px Helvetica;
     /* font-weight: bold; */
-    background: lightsteelblue;
-    border: 0px;
-    border-radius: 8px;
-    pointer-events: none;
-    opacity: 0;
+/* background: lightsteelblue;
+border: 0px;
+border-radius: 8px;
+pointer-events: none;
+opacity: 0; */
+}
+
+*/ .tooltip {
+    position: absolute;
+    background-color: white;
+    border: solid 1px gray;
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    z-index: 999;
 }
 
 div.body {
@@ -147,17 +138,38 @@ div.body {
     position: relative;
 }
 
-.chart {
+#chart {
     position: sticky;
     top: 100px;
+    z-index: 1;
+}
+
+.scroll-box {
+    position: absolute;
+    overflow-y: scroll;
 }
 
 .box {
     border: 1px solid white;
-    padding: 10px;
-    width: 400px;
+    padding: 3px;
+    width: 340px;
     text-align: center;
-    background-color: grey;
+    align-items: center;
+    color: black;
+    background-color: white;
+    font-family: Helvetica;
+    font-size: 16px;
+    /* z-index: 100; */
+    margin-bottom: 25em;
+    margin-left: auto;
+    /* Center align horizontally */
+    margin-right: auto;
+    /* Center align horizontally */
+
+}
+
+#text-scroll {
+    z-index: 100;
 }
 
 svg {

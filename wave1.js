@@ -1,7 +1,7 @@
 var pointCount = 10
 var lineCount = 30
 var random = d3.randomNormal(30, 25);
-var svg = d3.select('svg');
+var svg = d3.select('svg2');
 var NumberLines = d3.range(0, lineCount)
 var w = 500,
     h = 100;
@@ -47,13 +47,13 @@ var line = d3.line()
         return y(d);
     });
 
-var numerPath = svg.append('g')
+var numerPath = svg2.append('g')
     .selectAll("path")
     .data(NumberLines)
     .enter()
     .append('path')
 
-var path = svg.selectAll('path')
+var path = svg2.selectAll('path')
     .datum(data[0])
     .attr("d", line.curve(d3.curveBasis));
 

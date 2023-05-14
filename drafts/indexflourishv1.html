@@ -250,17 +250,27 @@
             </div>
         </div>
 
-        <div id="valencenenergy">
-            <div class="flourish-embed flourish-chart" data-src="visualisation/13546239">
+        // <div id="valencenenergy">
+            // <div class="flourish-embed flourish-chart" data-src="visualisation/13546239">
+                //
+                //
+                //
                 <script src="https://public.flourish.studio/resources/embed.js"></script>
+                //
+                //
+                //
             </div>
-        </div>
+            // </div>
 
-        <div id="valenceenergydance">
-            <div class="flourish-embed flourish-chart" data-src="visualisation/13542945">
+        // <div id="valenceenergydance">
+            // <div class="flourish-embed flourish-chart" data-src="visualisation/13542945">
+                //
+                //
                 <script src="https://public.flourish.studio/resources/embed.js"></script>
+                //
+                //
             </div>
-        </div>
+            // </div>
         <div id="valenceenergydancetempo">
             <div class="flourish-embed flourish-chart" data-src="visualisation/13555183">
                 <script src="https://public.flourish.studio/resources/embed.js"></script>
@@ -270,7 +280,41 @@
     <!-- 
     <div class=valence>
         <div id="my_dataviz">
-            <svg width="200" height="200" id="svg">
+            <svg width="200" height=const rectGroup = svg.append("g");
+
+// add the first rectangle
+rectGroup.append("rect")
+    .attr("x", 230)
+    .attr("y", 0)
+    .attr("width", 60)
+    .attr("height", 560)
+    .attr("fill", "grey");
+
+
+
+// add the second rectangle
+rectGroup.append("rect")
+    .attr("x", 310)
+    .attr("y", 0)
+    .attr("width", 80)
+    .attr("height", 560)
+    .attr("fill", "grey");
+
+// add the third rectangle
+rectGroup.append("rect")
+    .attr("x", 490)
+    .attr("y", 0)
+    .attr("width", 80)
+    .attr("height", 560)
+    .attr("fill", "grey");
+
+// add the four rectangle
+rectGroup.append("rect")
+    .attr("x", 600)
+    .attr("y", 0)
+    .attr("width", 70)
+    .attr("height", 560)
+    .attr("fill", "grey");"200" id="svg">
                 <g transform="translate(50, 200)"></g>
             </svg>
             <script src=main.js></script>
