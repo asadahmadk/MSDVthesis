@@ -11,8 +11,8 @@ const svg1 = d3.select("#my_dataviz")
 	.append("g")
 	.attr("transform", `translate(${margin.left},${margin.top})`);
 const tooltip = d3.select("#tooltip")
-	// .append("div")
-	// .attr("class", "tooltip")
+	.append("div")
+	.attr("class", "tooltip")
 	.style("opacity", 0);
 
 
@@ -70,7 +70,7 @@ d3.csv("https://raw.githubusercontent.com/asadahmadk/MSDVthesis/main/moodData%20
 
 	svg1.select(".x-tempo-axis").remove();
 
-	// Add Y axis for temp data
+	// Add Y axis for tempo data
 	const yTempo = d3.scaleLinear()
 		.domain([110, 130])
 		.range([height, 0]);
@@ -119,7 +119,7 @@ d3.csv("https://raw.githubusercontent.com/asadahmadk/MSDVthesis/main/moodData%20
 		.attr("cy", d => y(d.value))
 		.attr("r", 5)
 		.attr("stroke", "white")
-		.on("mousemove	", function (d) {
+		.on("mousemove", function (d) {
 			tooltip.transition()
 				.duration(200)
 				.style("opacity", .9);
