@@ -68,7 +68,7 @@ d3.csv("https://raw.githubusercontent.com/asadahmadk/MSDVthesis/main/moodData%20
 	svg1.append("g")
 		.call(d3.axisLeft(y));
 
-	svg1.select(".x-tempo-axis").remove();
+	// svg1.select(".x-tempo-axis").remove();
 
 	// Add Y axis for tempo data
 	const yTempo = d3.scaleLinear()
