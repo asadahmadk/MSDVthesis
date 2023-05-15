@@ -63,7 +63,7 @@ d3.csv("https://raw.githubusercontent.com/asadahmadk/MSDVthesis/main/moodData%20
 
 	// Add Y axis
 	const y = d3.scaleLinear()
-		.domain([0.4, 1])
+		.domain([0.4, 0.9])
 		.range([height, 0]);
 	svg1.append("g")
 		.call(d3.axisLeft(y));
