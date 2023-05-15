@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v6.js"></script>
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
+
+<body>
+    <link rel="stylesheet" href="style.css" />
+    <div class="before-chart">
+        <div class="container">
+            <div class="introduction">
+                <img src="Spotify_icon.png" width="100px" height="100px">
+                <h1>COVID-19 and Mood of Spotify Users</h1>
+                <h1>An Intricate Interplay</h1>
+                <p>
+                    by Asad Ahmad Khan
+                </p>
+            </div>
+            <div class="wave">
+                <svg viewBox="0 0 500 180">
+                    <defs>
+                        <linearGradient id="gradient_svg" x1="100%" y1="70%" x2="0%" y2="0%">
+                            <stop offset="0%" stop-color="#bc4a07" />
+                            <stop offset="50%" stop-color="#f8f000" />
+                            <stop offset="100%" stop-color="#33aa1b" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <script src="wave.js">
+                </script>
+            </div>
+        </div>
+
+        <div class="container ">
+            <img src="introgif.gif" width="900">
+
+        </div>
+
+        <div class="container">
+            <h1> What is the Composition of Mood?</h1>
+            <p>
+                Spotify defines the four elements of mood. For this article, data of top 100 songs each month is used
+                for these variables using
+                Spotify API
+                of from January 2019 to December 2022.
+            </p>
+
+
+            <div id="circles">
+                <script src="circles.js"></script>
+            </div>
+
+            <div class="flex-container">
+                <div class="flex-item">
+                    <h2> Valence</h2>
+                    <p>Musical positiveness conveyed by a track</p>
+                </div>
+                <div class="flex-item">
+                    <h2> Energy</h2>
+                    <p>Measure of intensity and activity
+                    </p>
+                </div>
+                <div class="flex-item">
+                    <h2> Danceability</h2>
+                    <p>Suitable for dancing </p>
+                </div>
+                <div class="flex-item">
+                    <h2>Tempo</h2>
+                    <p>Beats per Minute (BPM) </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Create a div where the graph will take place -->
+    <div class="chartcontainer">
+        <div id="chart">
+            <div class="flourish-embed flourish-chart" data-src="visualisation/13707567">
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
+            </div>
+        </div>
+
+
+        <p class="box"> <span style="color: #6e40aa"><b>Mar 2020</b></span> - Declared pandemic and lock down began.
+            Music
+            preferences shifted to listen happier songs and kept users' mood uplifted.</p>
+        <p class="box"> <span style="color: #6e40aa"><b>Jul 2020</b></span>- Adopted the new normal and first
+            vaccine was
+            introduced </p>
+        <p class="box"> <span style="color: #6e40aa"><b>May 2021</b></span>- Delta Variant Cases forced users to stay
+            at home, listening to positive music kept them
+            motivated </p>
+        <p class="box"> <span style="color: #6e40aa"><b>Dec 2021</b></span>- Positivity peaked, users were vaccinated.
+            Omicron variant caused uncertainty as vaccines lacked protection against it </p>
+        <p class="box"> <span style="color:#1ac7c2"><b>Valence and Energy</b></span> are coorelated
+            indicating every happy song is fast, loud and noisy. Kept the users energetic and enthusiastic </p>
+        <p class="box"><span style="color:#aff05b"><b>Danceability</b></span> was high yet outside clubs were closed.
+            Users preferred upbeat songs to keep their moods elevated indoors </p>
+        <p class="box"><span style="color:#ba0e13"><b>Tempo</b></span><b>, danceability,energy and valence</b> indicate
+            users kept
+            themselves motivated listening to positive, happier and lively music </p>
+        <p class="box"></p>
+
+    </div>
+
+    <div class="after-chart">
+        <div class="container">
+            <div class="section-left">
+                <h1>Which artists elevated our mood and kept us goes through difficult times?
+                </h1>
+                <p>Using the popularity measure of Spotify, artists are listed in terms of their popularity
+                    ranks
+                    assigned.</p>
+            </div>
+
+            <div class="section-right">
+                <div id="endimg">
+                    <img src="img.png">
+                    <p><small><i>Painting by Salman Toor</i></small></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div id="observablehq-chart-c23db5a9">
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+                <script type="module">
+                    import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+                    import define from "https://api.observablehq.com/d/d3ff39004b12a7ac@615.js?v=3";
+                    new Runtime().module(define, name => {
+                        if (name === "chart") return new Inspector(document.querySelector("#observablehq-chart-c23db5a9"));
+                    });
+                </script>
+            </div>
+        </div>
+
+
+        <div id="container">
+
+
+            <h2>
+                You can evaluate how important music is to keep our mood elevated and motivated.
+            </h2>
+            <div>
+                <div id="end">
+                    <img src="QRCode.png" width="150px" height="200px">
+                    <h1>bit.ly/moodincovid</h1>
+                    <style>
+                        #container {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            text-align: center;
+                            height: 80vh;
+                            /* set the height of the container to the height of the viewport */
+                        }
+
+                        QRCode {
+                            display: block;
+                            /* remove the default inline style of the image */
+                        }
+                    </style>
+
+                </div>
+            </div>
+            <p><b>NOTE</b></p>
+            <p>
+                This article is a short and simple introduction of the basic principles of mood as
+                defined by
+                Spotify.
+                The data is used from Spotify open API.
+            </p>
+
+        </div>
+    </div>
+
+    </div>
+</body>
