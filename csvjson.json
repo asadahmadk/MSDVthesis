@@ -1,0 +1,338 @@
+[
+  {
+    "date": "Jan-19",
+    "valence": 0.467,
+    "energy": 0.629,
+    "danceability": 0.714,
+    "tempo": 0.558
+  },
+  {
+    "date": "Feb-19",
+    "valence": 0.451,
+    "energy": 0.609,
+    "danceability": 0.714,
+    "tempo": 0.512
+  },
+  {
+    "date": "Mar-19",
+    "valence": 0.475,
+    "energy": 0.618,
+    "danceability": 0.716,
+    "tempo": 0.517
+  },
+  {
+    "date": "Apr-19",
+    "valence": 0.486,
+    "energy": 0.603,
+    "danceability": 0.71,
+    "tempo": 0.602
+  },
+  {
+    "date": "May-19",
+    "valence": 0.501,
+    "energy": 0.63,
+    "danceability": 0.707,
+    "tempo": 0.613
+  },
+  {
+    "date": "Jun-19",
+    "valence": 0.516,
+    "energy": 0.629,
+    "danceability": 0.722,
+    "tempo": 0.646
+  },
+  {
+    "date": "Jul-19",
+    "valence": 0.539,
+    "energy": 0.633,
+    "danceability": 0.715,
+    "tempo": 0.552
+  },
+  {
+    "date": "Aug-19",
+    "valence": 0.535,
+    "energy": 0.618,
+    "danceability": 0.71,
+    "tempo": 0.617
+  },
+  {
+    "date": "Sep-19",
+    "valence": 0.51,
+    "energy": 0.632,
+    "danceability": 0.703,
+    "tempo": 0.659
+  },
+  {
+    "date": "Oct-19",
+    "valence": 0.498,
+    "energy": 0.61,
+    "danceability": 0.679,
+    "tempo": 0.515
+  },
+  {
+    "date": "Nov-19",
+    "valence": 0.508,
+    "energy": 0.612,
+    "danceability": 0.695,
+    "tempo": 0.587
+  },
+  {
+    "date": "Dec-19",
+    "valence": 0.552,
+    "energy": 0.572,
+    "danceability": 0.624,
+    "tempo": 0.6
+  },
+  {
+    "date": "Jan-20",
+    "valence": 0.495,
+    "energy": 0.586,
+    "danceability": 0.712,
+    "tempo": 0.554
+  },
+  {
+    "date": "Feb-20",
+    "valence": 0.492,
+    "energy": 0.599,
+    "danceability": 0.696,
+    "tempo": 0.521
+  },
+  {
+    "date": "Mar-20",
+    "valence": 0.5,
+    "energy": 0.6,
+    "danceability": 0.695,
+    "tempo": 0.578
+  },
+  {
+    "date": "Apr-20",
+    "valence": 0.508,
+    "energy": 0.612,
+    "danceability": 0.718,
+    "tempo": 0.626
+  },
+  {
+    "date": "May-20",
+    "valence": 0.539,
+    "energy": 0.618,
+    "danceability": 0.73,
+    "tempo": 0.652
+  },
+  {
+    "date": "Jun-20",
+    "valence": 0.552,
+    "energy": 0.622,
+    "danceability": 0.727,
+    "tempo": 0.692
+  },
+  {
+    "date": "Jul-20",
+    "valence": 0.526,
+    "energy": 0.607,
+    "danceability": 0.704,
+    "tempo": 0.648
+  },
+  {
+    "date": "Aug-20",
+    "valence": 0.526,
+    "energy": 0.631,
+    "danceability": 0.711,
+    "tempo": 0.698
+  },
+  {
+    "date": "Sep-20",
+    "valence": 0.541,
+    "energy": 0.635,
+    "danceability": 0.715,
+    "tempo": 0.693
+  },
+  {
+    "date": "Oct-20",
+    "valence": 0.534,
+    "energy": 0.623,
+    "danceability": 0.7,
+    "tempo": 0.697
+  },
+  {
+    "date": "Nov-20",
+    "valence": 0.546,
+    "energy": 0.619,
+    "danceability": 0.683,
+    "tempo": 0.732
+  },
+  {
+    "date": "Dec-20",
+    "valence": 0.569,
+    "energy": 0.595,
+    "danceability": 0.673,
+    "tempo": 0.749
+  },
+  {
+    "date": "Jan-21",
+    "valence": 0.515,
+    "energy": 0.609,
+    "danceability": 0.701,
+    "tempo": 0.594
+  },
+  {
+    "date": "Feb-21",
+    "valence": 0.518,
+    "energy": 0.617,
+    "danceability": 0.705,
+    "tempo": 0.52
+  },
+  {
+    "date": "Mar-21",
+    "valence": 0.503,
+    "energy": 0.624,
+    "danceability": 0.692,
+    "tempo": 0.486
+  },
+  {
+    "date": "Apr-21",
+    "valence": 0.515,
+    "energy": 0.62,
+    "danceability": 0.697,
+    "tempo": 0.56
+  },
+  {
+    "date": "May-21",
+    "valence": 0.493,
+    "energy": 0.612,
+    "danceability": 0.674,
+    "tempo": 0.519
+  },
+  {
+    "date": "Jun-21",
+    "valence": 0.533,
+    "energy": 0.634,
+    "danceability": 0.679,
+    "tempo": 0.565
+  },
+  {
+    "date": "Jul-21",
+    "valence": 0.572,
+    "energy": 0.669,
+    "danceability": 0.703,
+    "tempo": 0.631
+  },
+  {
+    "date": "Aug-21",
+    "valence": 0.553,
+    "energy": 0.659,
+    "danceability": 0.69,
+    "tempo": 0.508
+  },
+  {
+    "date": "Sep-21",
+    "valence": 0.533,
+    "energy": 0.65,
+    "danceability": 0.684,
+    "tempo": 0.676
+  },
+  {
+    "date": "Oct-21",
+    "valence": 0.505,
+    "energy": 0.648,
+    "danceability": 0.667,
+    "tempo": 0.813
+  },
+  {
+    "date": "Nov-21",
+    "valence": 0.496,
+    "energy": 0.626,
+    "danceability": 0.646,
+    "tempo": 0.87
+  },
+  {
+    "date": "Dec-21",
+    "valence": 0.57,
+    "energy": 0.609,
+    "danceability": 0.609,
+    "tempo": 0.808
+  },
+  {
+    "date": "Jan-22",
+    "valence": 0.513,
+    "energy": 0.641,
+    "danceability": 0.665,
+    "tempo": 0.698
+  },
+  {
+    "date": "Feb-22",
+    "valence": 0.505,
+    "energy": 0.666,
+    "danceability": 0.66,
+    "tempo": 0.722
+  },
+  {
+    "date": "Mar-22",
+    "valence": 0.55,
+    "energy": 0.661,
+    "danceability": 0.678,
+    "tempo": 0.694
+  },
+  {
+    "date": "Apr-22",
+    "valence": 0.513,
+    "energy": 0.664,
+    "danceability": 0.674,
+    "tempo": 0.762
+  },
+  {
+    "date": "May-22",
+    "valence": 0.506,
+    "energy": 0.663,
+    "danceability": 0.68,
+    "tempo": 0.716
+  },
+  {
+    "date": "Jun-22",
+    "valence": 0.506,
+    "energy": 0.672,
+    "danceability": 0.695,
+    "tempo": 0.717
+  },
+  {
+    "date": "Jul-22",
+    "valence": 0.496,
+    "energy": 0.661,
+    "danceability": 0.68,
+    "tempo": 0.685
+  },
+  {
+    "date": "Aug-22",
+    "valence": 0.517,
+    "energy": 0.665,
+    "danceability": 0.684,
+    "tempo": 0.689
+  },
+  {
+    "date": "Sep-22",
+    "valence": 0.509,
+    "energy": 0.666,
+    "danceability": 0.672,
+    "tempo": 0.808
+  },
+  {
+    "date": "Oct-22",
+    "valence": 0.436,
+    "energy": 0.619,
+    "danceability": 0.66,
+    "tempo": 0.719
+  },
+  {
+    "date": "Nov-22",
+    "valence": 0.483,
+    "energy": 0.635,
+    "danceability": 0.574,
+    "tempo": 0.506
+  },
+  {
+    "date": "Dec-22",
+    "valence": 0.503,
+    "energy": 0.578,
+    "danceability": 0.632,
+    "tempo": 0.784
+  }
+]
