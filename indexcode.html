@@ -5,10 +5,11 @@
 <script src="https://d3js.org/d3.v6.js"></script>
 <script src="https://d3js.org/d3.v6.min.js"></script>
 <script src="https://d3js.org/d3.v7.min.js"></script>
-
+<script src="https://d3js.org/d3.v6.js"></script>
 
 <body>
     <link rel="stylesheet" href="style.css" />
+
     <div class="before-chart">
         <div class="container">
             <div class="introduction">
@@ -35,83 +36,123 @@
         </div>
 
         <div class="container ">
-            <img src="introgif.gif" width="900">
+            <p>
+                The widespread outbreak of the coronavirus had a profound impact, overwhelming healthcare
+                infrastructures,
+                causing a sharp decline in stock markets, and necessitating strict limitations on individual
+                mobility
+                for
+                countless individuals affecting their mood. In the last few years we have witnessed a significant
+                transformation
+                in the world but what made our lives better was
+                music.
+            </p>
 
+            <img src="lockdown.jpeg" width="900">
+
+            <p>
+                Music is used across cultures and ages as a powerful mood regulator. The mood of music is one of
+                main
+                motivations why people devote so much time, energy, and money to it.
+            </p>
         </div>
 
         <div class="container">
             <h1> What is the Composition of Mood?</h1>
             <p>
-                Spotify defines the four elements of mood. For this article, data of top 100 songs each month is used
-                for these variables using
-                Spotify API
+                Spotify defines the four components of mood on a scale of 0 to 1 in terms of: valence, energy,
+                danceability
+                and tempo. For this article, data of top 100 songs each month is used for these variables using
+                Spotify
+                API
                 of from January 2019 to December 2022.
             </p>
-
 
             <div id="circles">
                 <script src="circles.js"></script>
             </div>
 
+
             <div class="flex-container">
                 <div class="flex-item">
                     <h2> Valence</h2>
-                    <p>Musical positiveness conveyed by a track</p>
+                    <p1>Musical positiveness conveyed by a track; high valence sound more happy while tracks with low
+                        valence
+                        sound more sad.</p1>
                 </div>
                 <div class="flex-item">
                     <h2> Energy</h2>
-                    <p>Measure of intensity and activity
-                    </p>
+                    <p1>Perceptual measure of intensity and activity of how energetic tracks feel fast, loud, and noisy.
+                    </p1>
                 </div>
                 <div class="flex-item">
                     <h2> Danceability</h2>
-                    <p>Suitable for dancing </p>
+                    <p1>How suitable a track is for dancing based on a combination of musical elements.</p1>
                 </div>
                 <div class="flex-item">
                     <h2>Tempo</h2>
-                    <p>Beats per Minute (BPM) </p>
+                    <p1>Track beats per minute (BPM) which is the speed of a given piece and derives directly from the
+                        average
+                        beat duration.</p1>
                 </div>
             </div>
         </div>
     </div>
-
-
-    <!-- Create a div where the graph will take place -->
     <div class="chartcontainer">
+
+
         <div id="chart">
-            <div class="flourish-embed flourish-chart" data-src="visualisation/13707567">
-                <script src="https://public.flourish.studio/resources/embed.js"></script>
+
+            <div class="tooltip"></div>
+            <div class="svg-container">
+                <div id="my_dataviz">
+                    <script src="maingraph.js"></script>
+                </div>
             </div>
         </div>
 
 
-        <p class="box"> <span style="color: #6e40aa"><b>Mar 2020</b></span> - Declared pandemic and lock down began.
-            Music
-            preferences shifted to listen happier songs and kept users' mood uplifted.</p>
-        <p class="box"> <span style="color: #6e40aa"><b>Jul 2020</b></span>- Adopted the new normal and first
-            vaccine was
-            introduced </p>
-        <p class="box"> <span style="color: #6e40aa"><b>May 2021</b></span>- Delta Variant Cases forced users to stay
-            at home, listening to positive music kept them
-            motivated </p>
-        <p class="box"> <span style="color: #6e40aa"><b>Dec 2021</b></span>- Positivity peaked, users were vaccinated.
-            Omicron variant caused uncertainty as vaccines lacked protection against it </p>
-        <p class="box"> <span style="color:#1ac7c2"><b>Valence and Energy</b></span> are coorelated
-            indicating every happy song is fast, loud and noisy. Kept the users energetic and enthusiastic </p>
-        <p class="box"><span style="color:#aff05b"><b>Danceability</b></span> was high yet outside clubs were closed.
-            Users preferred upbeat songs to keep their moods elevated indoors </p>
-        <p class="box"><span style="color:#ba0e13"><b>Tempo</b></span><b>, danceability,energy and valence</b> indicate
-            users kept
-            themselves motivated listening to positive, happier and lively music </p>
-        <p class="box"></p>
+        <div id="text-scroll">
+            <p class="box"> <b>Mar 2020</b>- COVID’19 was declared as pandemic and lock down began.
+                Music preferences shifted to listen more happier songs and kept the mood of the users lifted.</p>
+            <p class="box"> <b>Jul 2020</b>- Slowly people started adopting the new normal and were relieved as first
+                vaccine was
+                introduced </p>
+            <p class="box"> <b>May 2021</b>- Delta Variant Cases were reported. Forced people to stay at home listening
+                to
+                music
+                kept them
+                motivated and hopeful </p>
+            <p class="box"> <b>Dec 2021</b>- Positivity was its peak, people were vaccinated. Omicron variant cases were
+                reported,
+                causing uncertainty as vaccines did not protect against them </p>
+            <p class="box"> <b>Valence and Energy</b> are inversely proportional indicating not every happy song is
+                fast,
+                loud and
+                noisy. On contrary happy songs have a low energy, soothing the listeners </p>
+            <p class="box"> <b>Danceability</b> was low as clubs and public spaces were closed. Indoors people
+                preferred,
+                high
+                valence, low energy and danceability songs to keep their moods elevated </p>
+            <p class="box"><b>Tempo, danceability and valence</b> are interconnnected indicating users were keeping
+                themselves
+                motivated through soothing and positive music </p>
+            <p class="box"></p>
 
+
+        </div>
     </div>
 
+    </div>
     <div class="after-chart">
         <div class="container">
             <div class="section-left">
                 <h1>Which artists elevated our mood and kept us goes through difficult times?
                 </h1>
+                <h3> You may be wondering which artist had the most listened songs and contributed to a
+                    happy mood
+                    through out
+                    COVID’19? </h3>
                 <p>Using the popularity measure of Spotify, artists are listed in terms of their popularity
                     ranks
                     assigned.</p>
@@ -119,7 +160,7 @@
 
             <div class="section-right">
                 <div id="endimg">
-                    <img src="img.png">
+                    <img src="img.png" width="480px" height="450px">
                     <p><small><i>Painting by Salman Toor</i></small></p>
                 </div>
             </div>
@@ -177,7 +218,5 @@
             </p>
 
         </div>
-    </div>
-
     </div>
 </body>
