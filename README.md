@@ -6,6 +6,14 @@ Music has a profound impact on our lives, calming and comforting our souls. Last
 
 This topic mainly addresses the interesting fact that when individuals are sad, depressed or unmotivated they tend to listen to positive, high energy and danceable music. It covers a social and psychological aspect of Spotify users, contributing to the curiosity of the user base and how to better understand human behavior. My method is to allow users to identify the casual relationship and the coping mechanisms of the Spotify users during tough times like COVID’19. It is one of its kind of works as it represents the interplay of mood during COVID’19 and music. While mostly the published works are curtailed to trends but do not overlap with a global event like a pandemic.
 
+## Key Insights
+1. Valence and Energy are coorelated indicating every happy song is fast, loud and noisy. Kept the users energetic and enthusiastic.
+2. Users preferred upbeat songs to keep their moods elevated indoors as evident through danceability.
+3. Tempo, danceability,energy and valence indicate users kept themselves motivated listening to positive, happier and lively music.
+4. 92% of the Spotify Users listened to Taylor Swift songs during this time of uncertainty.
+
+## Process
+
 ## Step 1 - Data Collection
 Data was scraped using Python script using Spotipy library. Global sound track data was scraped from January 2020 to December 2022. Spotify uses various audio features to analyze and classify tracks, which help in creating recommendations and playlists. The key audio features used to measure mood by Spotify are:
 
@@ -30,11 +38,6 @@ It was an iterative process from sketches to multiple designs, a final high fide
 Using HTML, CSS and Javascript: data story was created. 
 <img width="638" alt="Screenshot 2024-08-10 at 11 49 37 PM" src="https://github.com/user-attachments/assets/1c1f0c9c-fb64-45e7-ad58-e8a11072b0fd">
 
-## Key Insights
-1. Valence and Energy are coorelated indicating every happy song is fast, loud and noisy. Kept the users energetic and enthusiastic.
-2. Users preferred upbeat songs to keep their moods elevated indoors as evident through danceability.
-3. Tempo, danceability,energy and valence indicate users kept themselves motivated listening to positive, happier and lively music.
-4. 92% of the Spotify Users listened to Taylor Swift songs during this time of uncertainty.
 
 
 
