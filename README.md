@@ -14,7 +14,7 @@ This topic mainly addresses the interesting fact that when individuals are sad, 
 
 ## Process
 
-## Step 1 - Data Collection
+### Step 1 - Data Collection
 Data was scraped using Python script using Spotipy library. Global sound track data was scraped from January 2020 to December 2022. Spotify uses various audio features to analyze and classify tracks, which help in creating recommendations and playlists. The key audio features used to measure mood by Spotify are:
 
 1. Valence: A measure of the musical positiveness conveyed by a track. Higher valence indicates a more positive mood (e.g., happy, cheerful), while lower valence indicates a more negative mood (e.g., sad, angry).
@@ -26,15 +26,15 @@ During this process data was analyzed and insights were extracted to build the m
    
 <img width="1137" alt="Screenshot 2024-08-10 at 11 19 29 PM" src="https://github.com/user-attachments/assets/4cc6dcd0-718b-4c5c-bd08-08380b871fdb">
 
-## Step 2 - Design Layout
+### Step 2 - Design Layout
 ![Design Layout](https://github.com/asadahmadk/MSDVthesis/assets/109235609/bb00f009-7c99-4a05-9d14-f78f0ebc6118)
 
-## Step 3 - High Fidelity Design
+### Step 3 - High Fidelity Design
 It was an iterative process from sketches to multiple designs, a final high fidelity design was created using [Figma](https://www.figma.com/design/63pcFwiA8w53ecq0DULiv5/Thesis-Wireframes?node-id=0-1&t=frF56N5NXnrdw4IB-1).
 
 <img width="728" alt="Screenshot 2024-08-10 at 11 27 55 PM" src="https://github.com/user-attachments/assets/172837fd-cec9-40ec-bc89-e4e4cde813e1">
 
-## Step 4 - Coding the Data Story
+### Step 4 - Coding the Data Story
 Using HTML, CSS and Javascript: data story was created. 
 <img width="638" alt="Screenshot 2024-08-10 at 11 49 37 PM" src="https://github.com/user-attachments/assets/1c1f0c9c-fb64-45e7-ad58-e8a11072b0fd">
 
