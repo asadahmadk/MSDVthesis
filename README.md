@@ -3,7 +3,7 @@
 ### View Demo: https://asadahmadk.github.io/MSDVthesis/
 ### [Video Presentation](https://parsons.nyc/archive/#/project/2023-covid-19-and-mood-of-spotify-users--asad-ahmad-khan)
 
-### [Thesis Paper]([https://github.com/asadahmadk/MSDVthesis/blob/main/Thesis%20Paper.pdf])
+### [Thesis Paper](https://github.com/asadahmadk/MSDVthesis/blob/main/Thesis%20Paper.pdf)
 
 Music has a profound impact on our lives, calming and comforting our souls. Last few years the world has undergone tremendous changes. This project is a short and simple introduction of the basic principles of mood as defined by Spotify using the data from Spotify open API. My project focuses on the intricate interplay of four major covid events and the mood of spotify users. The four components of music as identified by Spotify are: valence, energy, danceability and tempo. Using the major events of COVID’19 these four elements are analyzed in the visualization using digital medium for the users to explore  these elements against the timeline. 
 
